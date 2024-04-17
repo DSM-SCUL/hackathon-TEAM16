@@ -1,0 +1,41 @@
+spring:
+  main:
+    #allow-bean-definition-overriding : true
+  datasource:
+    url: jdbc:mysql://13.125.62.246/scul
+    username: root
+    password: '070211'
+    dialect: org.hibernate.dialect.MySQLDialect
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+        dialect: org.hibernate.dialect.MySQLDialect
+        defer-datasource-initialization: true
+
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+      password: ${REDIS_PASSWORD:1234}
+
+jwt:
+  header: ${HEADER:Authorization}
+  prefix : ${PREFIX:Bearer}
+  secret-key: ${JWT_SECRET_KEY:dfhasjkdfhayffhdtyhdhydshghjkdfaskverafter}
+  access-exp: ${JWT_ACCESS_EXP:10000}
+  refresh-exp: ${JWT_REFRESH_EXP:604800}
+
+
+logging:
+  level:
+    com.example : DEBUG
+    org:
+      hibernate:
+        type:
+          descriptor:
+            sql: trace
