@@ -8,13 +8,13 @@ import jakarta.persistence.Entity
 class User(
         id : Long,
 
-        @Column(columnDefinition = "VARCHAR(50)", nullable = false)
+        @Column(columnDefinition = "VARCHAR(10)", nullable = false)
         val name: String,
 
-        @Column(columnDefinition = "VARCHAR(10)", nullable = false)
+        @Column(columnDefinition = "VARCHAR(30)", nullable = false)
         val accountId: String,
 
-        @Column(columnDefinition = "CHAR(60)", nullable = false)
+        @Column(columnDefinition = "CHAR(30)", nullable = false)
         val password: String,
 
 ) : BaseEntity(id)

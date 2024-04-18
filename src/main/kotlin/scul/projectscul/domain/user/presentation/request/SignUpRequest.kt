@@ -5,14 +5,14 @@ import jakarta.validation.constraints.Size
 
 data class SignUpRequest(
         @field:NotBlank
-        @field:Size(max = 40)
+        @field:Size(max = 10)
         val name: String,
 
         @field:NotBlank
-        @field:Size(max = 10)
+        @field:Size(max = 30)
         val accountId: String,
 
         @field:NotBlank
-        @field:Size(max = 25)
+        @field:Size(max = 30)
         val password: String
 )
