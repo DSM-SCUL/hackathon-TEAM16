@@ -15,7 +15,7 @@ class FilterConfig(
 ): SecurityConfigurerAdapter<DefaultSecurityFilterChain, HttpSecurity>(){
 
     @Override
-    public override fun configure(http: HttpSecurity) {
+    override fun configure(http: HttpSecurity) {
 
         http
             .addFilterBefore(JwtFilter(jwtTokenProvider), UsernamePasswordAuthenticationFilter::class.java)

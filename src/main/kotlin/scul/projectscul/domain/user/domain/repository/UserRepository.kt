@@ -7,6 +7,6 @@ interface UserRepository : CrudRepository<User, Long>{
 
     fun existsByAccountId(accountId: String) : Boolean
 
-    fun findByAccountId(accountId: String) : User?
+    fun findByAccountId(accountId: String) : User
 
 }

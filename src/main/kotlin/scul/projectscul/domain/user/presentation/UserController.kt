@@ -6,15 +6,22 @@ import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
+import scul.projectscul.domain.user.presentation.request.LoginRequest
+import scul.projectscul.domain.user.service.LoginService
 
 @RequestMapping("/user")
 @RestController
 class UserController (
-        private val signUpService: SignUpService
+        private val signUpService: SignUpService,
+        private val loginService: LoginService
 ) {
-    @PostMapping
-    fun signUp(@RequestBody request : SignUpRequest) {
+    @PostMapping("sign-up")
+    fun signUp(@RequestBody request: SignUpRequest) {
         signUpService.execute(request)
     }
 
+    @PostMapping("login")
+    fun login(@RequestBody request: LoginRequest) {
+        loginService.execute(request)
+    }
 }

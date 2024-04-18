@@ -16,7 +16,7 @@ enum class ErrorCode (
     EMAIL_NOT_FOUND(404, "Email Not Found"),
     EMAIL_ALREADY_EXISTS(409, "Email Already Exists"),
 
-    PASSWORD_MISS_MATCH(400, "Password Miss Match"),
+    PASSWORD_MIS_MATCH(400, "Password Miss Match"),
     USER_NOT_FOUND(404, "User Not Found"),
     USER_ALREADY_EXISTS(409, "User Already Exists"),
 

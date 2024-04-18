@@ -1,15 +1,15 @@
 spring:
   main:
-    #allow-bean-definition-overriding : true
+    allow-bean-definition-overriding : true
   datasource:
-    url: jdbc:mysql://13.125.62.246/scul
+    url: jdbc:mysql://172.31.41.149:3306/scul
     username: root
     password: '070211'
     dialect: org.hibernate.dialect.MySQLDialect
 
   jpa:
     hibernate:
-      ddl-auto: validate
+      ddl-auto: create
     properties:
       hibernate:
         format_sql: true
