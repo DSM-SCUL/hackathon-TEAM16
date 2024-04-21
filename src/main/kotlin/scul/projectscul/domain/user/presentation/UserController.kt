@@ -15,12 +15,12 @@ class UserController (
         private val signUpService: SignUpService,
         private val loginService: LoginService
 ) {
-    @PostMapping("sign-up")
+    @PostMapping("/sign-up")
     fun signUp(@RequestBody request: SignUpRequest) {
         signUpService.execute(request)
     }
 
-    @PostMapping("login")
+    @PostMapping("/login")
     fun login(@RequestBody request: LoginRequest) {
         loginService.execute(request)
     }

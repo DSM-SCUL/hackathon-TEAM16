@@ -3,9 +3,9 @@ spring:
     allow-bean-definition-overriding : true
   datasource:
     url: jdbc:mysql://172.31.41.149:3306/scul
-    username: root
-    password: '070211'
-    dialect: org.hibernate.dialect.MySQLDialect
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
     hibernate:
@@ -19,9 +19,8 @@ spring:
 
   data:
     redis:
-      host: ${REDIS_HOST:localhost}
+      host: ${REDIS_HOST:redis.xquare.app}
       port: ${REDIS_PORT:6379}
-      password: ${REDIS_PASSWORD:1234}
 
 jwt:
   header: ${HEADER:Authorization}
