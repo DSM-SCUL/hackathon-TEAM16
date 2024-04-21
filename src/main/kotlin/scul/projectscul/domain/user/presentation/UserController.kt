@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.RestController
 import scul.projectscul.domain.user.presentation.request.LoginRequest
 import scul.projectscul.domain.user.service.LoginService
 
-@RequestMapping("/scul/user")
+@RequestMapping("/user")
 @RestController
 class UserController (
         private val signUpService: SignUpService,
         private val loginService: LoginService
 ) {
-    @PostMapping("/sign-up")
+    @PostMapping("/signup")
     fun signUp(@RequestBody request: SignUpRequest) {
         signUpService.execute(request)
     }

@@ -14,14 +14,13 @@ class SignUpService (
 
     @Transactional
     fun execute(request: SignUpRequest) {
-
         if (userRepository.existsByAccountId(request.accountId)){
             throw UserAlreadyExistsException
         }
 
         userRepository.save(
                 User(
-                        id = 0,
+                        id = null,
                         name = request.name,
                         accountId = request.accountId,
                         password = request.password

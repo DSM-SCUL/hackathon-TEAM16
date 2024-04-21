@@ -1,13 +1,14 @@
 package scul.projectscul.domain.review.domain
 
-import com.example.kotlinpractice.global.entity.BaseEntity
+import com.example.kotlinpractice.global.entity.BaseUUIDEntity
 import jakarta.persistence.*
 import scul.projectscul.domain.culture.domain.Culture
 import scul.projectscul.domain.user.domain.User
+import java.util.*
 
 @Entity
 class Review (
-        id: Long,
+        id: UUID?,
 
         @Column(columnDefinition = "VARCHAR(100)", nullable = false)
         val title: String,
@@ -23,4 +24,4 @@ class Review (
         @JoinColumn(name = "user_id", columnDefinition = "BIGINT", nullable = false)
         val user: User
 
-) : BaseEntity(id)
+) : BaseUUIDEntity(id)

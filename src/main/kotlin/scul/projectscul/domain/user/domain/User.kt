@@ -1,12 +1,13 @@
 package scul.projectscul.domain.user.domain
 
-import com.example.kotlinpractice.global.entity.BaseEntity
+import com.example.kotlinpractice.global.entity.BaseUUIDEntity
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
+import java.util.*
 
 @Entity
 class User(
-        id : Long,
+        id : UUID?,
 
         @Column(columnDefinition = "VARCHAR(10)", nullable = false)
         val name: String,
@@ -17,4 +18,4 @@ class User(
         @Column(columnDefinition = "CHAR(30)", nullable = false)
         val password: String,
 
-) : BaseEntity(id)
+        ) : BaseUUIDEntity(id)
