@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController
 import scul.projectscul.domain.user.presentation.request.LoginRequest
 import scul.projectscul.domain.user.service.LoginService
 
-@RequestMapping("/user")
+@RequestMapping("/scul/user")
 @RestController
 class UserController (
         private val signUpService: SignUpService,
