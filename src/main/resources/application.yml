@@ -2,7 +2,7 @@ spring:
   main:
     allow-bean-definition-overriding : true
   datasource:
-    url: ${DB_URL}
+    url: jdbc:mysql://172.31.41.149:3306/scul
     username: ${DB_USERNAME}
     password: ${DB_PASSWORD}
     driver-class-name: com.mysql.cj.jdbc.Driver
