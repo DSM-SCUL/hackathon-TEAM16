@@ -2,14 +2,14 @@ spring:
   main:
     allow-bean-definition-overriding : true
   datasource:
-    url: jdbc:mysql://mysql.xquare.app:3306/prod_scul
+    url: ${DB_URL:jdbc:mysql://mysql.xquare.app:3306/prod_scul}
     username: ${DB_USERNAME:xquare-scul}
     password: ${DB_PASSWORD:OltoO0hNgUEm}
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: validate
     properties:
       hibernate:
         format_sql: true
