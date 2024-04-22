@@ -4,14 +4,12 @@ import com.example.kotlinpractice.global.entity.BaseUUIDEntity
 import jakarta.persistence.*
 import scul.projectscul.domain.culture.domain.Culture
 import scul.projectscul.domain.user.domain.User
+import java.time.LocalDate
 import java.util.*
 
 @Entity
 class Review (
         id: UUID?,
-
-        @Column(columnDefinition = "VARCHAR(100)", nullable = false)
-        val title: String,
 
         @Column(columnDefinition = "VARCHAR(1000)", nullable = false)
         val content: String,
@@ -22,6 +20,9 @@ class Review (
 
         @ManyToOne(fetch = FetchType.LAZY)
         @JoinColumn(name = "user_id", columnDefinition = "BIGINT", nullable = false)
-        val user: User
+        val user: User,
+
+        @Column
+        val createdAt: LocalDate
 
 ) : BaseUUIDEntity(id)

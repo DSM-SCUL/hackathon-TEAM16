@@ -7,6 +7,7 @@ import scul.projectscul.domain.review.domain.Review
 import scul.projectscul.domain.review.domain.repository.ReviewRepository
 import scul.projectscul.domain.review.presentation.dto.request.CreateReviewRequest
 import scul.projectscul.domain.user.facade.UserFacade
+import java.time.LocalDate
 import java.util.UUID
 
 @Service
@@ -20,13 +21,15 @@ class CreateReviewService (
         val currentUser = userFacade.getCurrentUser()
         val culture = cultureRepository.findCultureById(cultureId)
 
+        val now = LocalDate.now()
+
         reviewRepository.save(
                 Review(
                         id = null,
-                        title = request.title,
                         content = request.content,
                         user = currentUser,
-                        culture = culture
+                        culture = culture,
+                        createdAt = now
                 )
         )
     }

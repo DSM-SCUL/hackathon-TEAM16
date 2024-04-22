@@ -1,6 +1,7 @@
 package scul.projectscul.domain.review.presentation.dto.response
 
 import scul.projectscul.domain.review.domain.Review
+import java.time.LocalDate
 import java.util.UUID
 
 data class GetReviewsResponse(
@@ -9,13 +10,15 @@ data class GetReviewsResponse(
 ) {
     data class ReviewsResponse (
             val id: UUID?,
-            val title: String,
-            val content: String
+            val writer: String,
+            val content: String,
+            val createdAt: LocalDate
     ) {
         constructor(review: Review): this(
                 id = review.id,
-                title = review.title,
-                content = review.content
+                writer = review.user.name,
+                content = review.content,
+                createdAt = review.createdAt
         )
     }
 }
