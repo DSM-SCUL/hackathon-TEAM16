@@ -1,14 +1,11 @@
 package scul.projectscul.domain.bookmark.domain
 
-import jakarta.persistence.Entity
-import jakarta.persistence.FetchType
-import jakarta.persistence.Id
-import jakarta.persistence.JoinColumn
-import jakarta.persistence.ManyToOne
+import jakarta.persistence.*
 import scul.projectscul.domain.culture.domain.Culture
 import scul.projectscul.domain.user.domain.User
 
 @Entity
+@IdClass(BookMarkId::class)
 class BookMark (
 
         @Id
