@@ -3,14 +3,14 @@ package scul.projectscul.domain.bookmark.presentation
 import org.jetbrains.annotations.NotNull
 import org.springframework.web.bind.annotation.*
 import scul.projectscul.domain.bookmark.service.BookMarkService
-import scul.projectscul.domain.review.presentation.dto.request.CreateReviewRequest
-import scul.projectscul.domain.review.presentation.dto.response.GetReviewsResponse
+import scul.projectscul.domain.culture.presentation.dto.response.GetCultureListResponse
 import java.util.*
 
 @RestController
 @RequestMapping("/bookmarks")
 class BookMarkController (
-        private val bookMarkService: BookMarkService
+        private val bookMarkService: BookMarkService,
+        //private val getMyBookMarkService: GetMyBookMarkService
 ) {
 
     @PostMapping("/{culture-id}")
@@ -19,9 +19,11 @@ class BookMarkController (
     ) {
         bookMarkService.execute(cultureId)
     }
-
+/*
     @GetMapping
     fun getMyBookMarks() : GetCultureListResponse {
-        return getMyReviewService.execute()
+        return getMyBookMarkService.execute()
     }
+
+ */
 }
