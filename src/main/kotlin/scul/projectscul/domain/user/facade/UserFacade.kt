@@ -6,6 +6,7 @@ import scul.projectscul.domain.user.exception.UserNotFoundException
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.stereotype.Component
+import java.util.UUID
 
 @Component
 class UserFacade (
@@ -13,7 +14,7 @@ class UserFacade (
 ) {
 
     fun getCurrentUser(): User {
-        val id = SecurityContextHolder.getContext().authentication.name.toLong()
+        val id = (SecurityContextHolder.getContext().authentication.principal as UUID)
         return userRepository.findByIdOrNull(id) ?: throw UserNotFoundException
     }
 
