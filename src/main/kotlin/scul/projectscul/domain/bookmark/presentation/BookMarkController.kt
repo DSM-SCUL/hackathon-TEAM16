@@ -7,7 +7,7 @@ import scul.projectscul.domain.culture.presentation.dto.response.GetCultureListR
 import java.util.*
 
 @RestController
-@RequestMapping("/bookmarks")
+@RequestMapping("/scul/bookmarks")
 class BookMarkController (
         private val bookMarkService: BookMarkService,
         //private val getMyBookMarkService: GetMyBookMarkService

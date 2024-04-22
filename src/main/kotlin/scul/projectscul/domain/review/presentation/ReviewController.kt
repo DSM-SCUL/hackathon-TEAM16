@@ -14,7 +14,7 @@ import scul.projectscul.domain.review.service.GetMyReviewService
 import scul.projectscul.domain.review.service.GetReviewsService
 import java.util.UUID
 
-@RequestMapping("/reviews")
+@RequestMapping("/scul/reviews")
 @RestController
 class ReviewController (
         private val createReviewService: CreateReviewService,
