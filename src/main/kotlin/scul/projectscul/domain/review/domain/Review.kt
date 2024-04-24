@@ -15,11 +15,11 @@ class Review (
         val content: String,
 
         @ManyToOne(fetch = FetchType.LAZY)
-        @JoinColumn(name = "culture_id", columnDefinition = "BIGINT", nullable = false)
+        @JoinColumn(name = "culture_id", columnDefinition = "BINARY(16)", nullable = false)
         val culture: Culture,
 
         @ManyToOne(fetch = FetchType.LAZY)
-        @JoinColumn(name = "user_id", columnDefinition = "BIGINT", nullable = false)
+        @JoinColumn(name = "user_id", columnDefinition = "BINARY(16)", nullable = false)
         val user: User,
 
         @Column
