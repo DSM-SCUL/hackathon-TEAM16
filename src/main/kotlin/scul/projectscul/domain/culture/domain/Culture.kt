@@ -62,8 +62,4 @@ class Culture (
         @Column(columnDefinition = "DOUBLE", nullable = true)
         val yCoordinate: Double,
 
-        //북마크 되어있는지
-        @Column
-        val isBookMarked: Boolean = false
-
 ) : BaseUUIDEntity(id)

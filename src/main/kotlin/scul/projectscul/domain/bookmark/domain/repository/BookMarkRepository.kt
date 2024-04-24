@@ -13,4 +13,6 @@ interface BookMarkRepository: JpaRepository<BookMark, BookMarkId> {
     fun findBookMarksByUser(user: User): List<BookMark>
 
     fun findBookMarkByCultureAndUser(culture: Culture, user: User) : BookMark?
+
+    fun existsByCultureAndUser(culture: Culture, user: User) : Boolean
 }
