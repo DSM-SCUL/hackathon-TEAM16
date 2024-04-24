@@ -13,13 +13,11 @@ class GetReviewsService (
         private val reviewRepository: ReviewRepository
 ){
     fun execute(cultureId: UUID): GetReviewsResponse {
-
         val reviews: List<Review> = reviewRepository.findReviewsByCulture_Id(cultureId)
-
 
         return GetReviewsResponse(
                 reviews.map {
-                            GetReviewsResponse.ReviewsResponse(it)
+                    GetReviewsResponse.ReviewsResponse(it)
                 }
         )
     }

@@ -8,6 +8,4 @@ import java.util.*
 interface CultureRepository: JpaRepository<Culture, UUID> {
 
     fun findCultureById(cultureId: UUID) : Culture
-
-
 }

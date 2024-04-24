@@ -5,7 +5,6 @@ import java.time.LocalDate
 import java.util.UUID
 
 data class GetReviewsResponse(
-
         val reviewList: List<ReviewsResponse>
 ) {
     data class ReviewsResponse (
