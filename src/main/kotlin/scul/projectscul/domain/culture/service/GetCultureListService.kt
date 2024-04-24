@@ -16,8 +16,8 @@ import java.util.UUID
 class GetCultureListService (
         private val cultureRepository: CultureRepository
 ) {
-    fun execute(): GetCultureListResponse {
-        val culture: List<Culture> = cultureRepository.findAll()
+    fun execute(title: String, wantPeople: String): GetCultureListResponse {
+        val culture: List<Culture> = cultureRepository.findCulturesByWantedPeopleContainingAndCultureNameContaining(wantPeople, title)
 
         return GetCultureListResponse(
                 culture.map {

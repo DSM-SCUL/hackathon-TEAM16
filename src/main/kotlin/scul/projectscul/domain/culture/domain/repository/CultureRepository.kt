@@ -8,4 +8,6 @@ import java.util.*
 interface CultureRepository: JpaRepository<Culture, UUID> {
 
     fun findCultureById(cultureId: UUID) : Culture
+
+    fun findCulturesByWantedPeopleContainingAndCultureNameContaining(wantedPeople: String?, cultureName: String?) : List<Culture>
 }
