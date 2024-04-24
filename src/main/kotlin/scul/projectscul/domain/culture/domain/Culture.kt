@@ -16,19 +16,21 @@ class Culture (
         //이미지 url
         val imageUrl: String,
 
-        //장소(서울 특별시 대공원)
+        //장소 (서울 특별시 대공원)
         val placeName: String,
 
-        //장애인(중고등학교 특수학급 단체)
+        //서비스 대상 ex) 장애인(중고등학교 특수학급 단체)
         val wantedPeople: String,
 
-        //느낌 있는 박물관> 교육생 모집 안내
+        //서비스명 ex)느낌 있는 박물관> 교육생 모집 안내
         @Column(columnDefinition = "VARCHAR(50)", nullable = true)
         val cultureName: String,
 
+        //상세내용
         @Column(columnDefinition = "TEXT")
         val content: String,
 
+        //전화 번호
         @Column(columnDefinition = "VARCHAR(50)", nullable = true)
         val phoneNumber: String,
 
@@ -64,4 +66,4 @@ class Culture (
         @Column
         val isBookMarked: Boolean = false
 
-) : BaseUUIDEntity(id) //일단 서비스 일자는 보류?
+) : BaseUUIDEntity(id)

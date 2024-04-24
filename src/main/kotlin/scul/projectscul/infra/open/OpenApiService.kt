@@ -23,14 +23,8 @@ class OpenApiService (
     }
 
     private suspend fun fetchCultures(): ResponseEntity<String> {
-        val apiKey = "4e724e637a31323138375478514353"  // 인증키
-        val fileType = "xml"  // 요청 파일 타입
-        val serviceName = "ListPublicReservationCulture"  // 서비스명
-        val startIndex = "1"  // 요청 시작 위치
-        val endIndex = "1"  // 요청 종료 위치
         val urlBuilder = "http://openAPI.seoul.go.kr:8088/4e724e637a31323138375478514353/xml/ListPublicReservationCulture/1/5/"
 
-        // URL 연결 설정
         val url = URL(urlBuilder)
         val conn = url.openConnection() as HttpURLConnection
         conn.requestMethod = "GET"
