@@ -17,7 +17,7 @@ class CultureController (
 
     @GetMapping
     suspend fun getCultureList(): GetCultureListResponse {
-        getCultureListService.execute()
+        return getCultureListService.execute()
     }
 
     @GetMapping("/api")
