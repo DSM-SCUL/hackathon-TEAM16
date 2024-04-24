@@ -1,7 +1,5 @@
 package scul.projectscul.infra.open
 
-import org.json.JSONArray
-import org.json.JSONObject
 import org.springframework.http.ResponseEntity
 import org.springframework.stereotype.Service
 import org.w3c.dom.Element
@@ -20,6 +18,7 @@ class OpenApiService (
         private val cultureRepository: CultureRepository
 ) {
     suspend fun execute() {
+        cultureRepository.deleteAll()
         val cultureList = fetchCultures()
     }
 
