@@ -10,31 +10,47 @@ import java.util.*
 class Culture (
         id: UUID?,
 
-        @Column(columnDefinition = "VARCHAR(50)", nullable = false)
-        val title: String,
+        //지역명 (구로시)
+        val location: String,
 
-        @Column(columnDefinition = "VARCHAR(50)", nullable = false)
+        //이미지 url
+        val imageUrl: String,
+
+        //장소(서울 특별시 대공원)
+        val placeName: String,
+
+        //장애인(중고등학교 특수학급 단체)
+        val wantedPeople: String,
+
+        //느낌 있는 박물관> 교육생 모집 안내
+        @Column(columnDefinition = "VARCHAR(50)", nullable = true)
+        val cultureName: String,
+
+        @Column(columnDefinition = "TEXT")
+        val content: String,
+
+        @Column(columnDefinition = "VARCHAR(50)", nullable = true)
         val phoneNumber: String,
 
-        @Column(columnDefinition = "VARCHAR(50)", nullable = false)
+        @Column(columnDefinition = "VARCHAR(50)", nullable = true)
         val availableTime: String,
 
         @Column(nullable = true)
-        val tickerPrice: Int,
+        val ticketPrice: String,
 
-        @Column(columnDefinition = "VARCHAR(100)", nullable = false)
+        //바로가기 url
+        @Column(columnDefinition = "VARCHAR(100)", nullable = true)
         val cultureLink: String,
 
-        @Column(columnDefinition = "DOUBLE", nullable = false)
+        //y 좌표
+        @Column(columnDefinition = "DOUBLE", nullable = true)
         val xCoordinate: Double,
 
-        @Column(columnDefinition = "DOUBLE", nullable = false)
+        //y좌표
+        @Column(columnDefinition = "DOUBLE", nullable = true)
         val yCoordinate: Double,
-
-        @Column
-        val cultureType: CultureType,
 
         @Column
         val isBookMarked: Boolean = false
 
-) : BaseUUIDEntity(id)
+) : BaseUUIDEntity(id) //일단 서비스 일자는 보류?
