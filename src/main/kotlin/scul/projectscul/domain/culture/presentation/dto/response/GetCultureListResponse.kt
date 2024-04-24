@@ -1,6 +1,5 @@
 package scul.projectscul.domain.culture.presentation.dto.response
 
-import scul.projectscul.domain.culture.domain.Culture
 import java.util.UUID
 
 data class GetCultureListResponse(
