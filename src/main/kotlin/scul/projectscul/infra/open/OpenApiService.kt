@@ -19,7 +19,7 @@ class OpenApiService (
 ) {
     suspend fun execute() {
         cultureRepository.deleteAll()
-        val cultureList = fetchCultures()
+        fetchCultures()
     }
 
     private suspend fun fetchCultures(): ResponseEntity<String> {
@@ -65,7 +65,10 @@ class OpenApiService (
 
                 val culture = Culture(
                         id = null,
-                        availableTime = "d",
+                        applicationStartDate = element.getElementsByTagName("RCPTBGNDT").item(0).textContent,
+                        applicationEndDate = element.getElementsByTagName("RCPTENDDT").item(0).textContent,
+                        serviceStartDate = element.getElementsByTagName("SVCOPNBGNDT").item(0).textContent,
+                        serviceEndDate = element.getElementsByTagName("SVCOPNENDDT").item(0).textContent,
                         cultureName = element.getElementsByTagName("SVCNM").item(0).textContent,
                         ticketPrice = element.getElementsByTagName("PAYATNM").item(0).textContent,
                         placeName = element.getElementsByTagName("PLACENM").item(0).textContent,

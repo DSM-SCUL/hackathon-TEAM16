@@ -32,9 +32,19 @@ class Culture (
         @Column(columnDefinition = "VARCHAR(50)", nullable = true)
         val phoneNumber: String,
 
-        @Column(columnDefinition = "VARCHAR(50)", nullable = true)
-        val availableTime: String,
+        //서비스 개시 시작일시
+        val applicationStartDate: String,
 
+        //서비스 개시 시작일시
+        val applicationEndDate: String,
+
+        //서비스 개시 시작일시
+        val serviceStartDate: String,
+
+        //서비스 개시 시작일시
+        val serviceEndDate: String,
+
+        //입장료
         @Column(nullable = true)
         val ticketPrice: String,
 
@@ -50,6 +60,7 @@ class Culture (
         @Column(columnDefinition = "DOUBLE", nullable = true)
         val yCoordinate: Double,
 
+        //북마크 되어있는지
         @Column
         val isBookMarked: Boolean = false
 
