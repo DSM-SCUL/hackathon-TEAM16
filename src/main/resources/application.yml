@@ -2,14 +2,14 @@ spring:
   main:
     allow-bean-definition-overriding : true
   datasource:
-    url: jdbc:mysql://mysql.xquare.app:3306/prod_scul
-    username: xquare-scul
-    password: OltoO0hNgUEm
+    url: jdbc:mysql://localhost:3306/prod_scul
+    username: root
+    password: '070211'
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
     properties:
       hibernate:
         format_sql: true
@@ -19,8 +19,9 @@ spring:
 
   data:
     redis:
-      host: ${REDIS_HOST:redis.xquare.app}
+      host: ${REDIS_HOST:localhost}
       port: ${REDIS_PORT:6379}
+      password: asdf
 
 jwt:
   header: ${HEADER:Authorization}
@@ -28,7 +29,6 @@ jwt:
   secret-key: ${JWT_SECRET_KEY:dfhasjkdfhayffhdtyhdhydshghjkdfaskverafter}
   access-exp: ${JWT_ACCESS_EXP:10000}
   refresh-exp: ${JWT_REFRESH_EXP:604800}
-
 
 logging:
   level:
