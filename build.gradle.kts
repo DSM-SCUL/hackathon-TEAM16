@@ -50,12 +50,8 @@ dependencies {
 
 	implementation("org.springframework.boot:spring-boot-starter-web")
 
-	//queryDSL
-	implementation ("com.querydsl:querydsl-jpa")
-	annotationProcessor(
-			"javax.persistence:javax.persistence-api",
-			"javax.annotation:javax.annotation-api",
-			"com.querydsl:querydsl-apt:5.0.0:jpa")
+	//fcm
+	implementation("com.google.firebase:firebase-admin:8.1.0")
 
 	//mysql
 	runtimeOnly("com.mysql:mysql-connector-j")
