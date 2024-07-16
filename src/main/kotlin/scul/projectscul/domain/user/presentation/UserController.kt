@@ -10,7 +10,7 @@ import scul.projectscul.domain.user.presentation.request.LoginRequest
 import scul.projectscul.domain.user.service.LoginService
 import scul.projectscul.global.redis.dto.TokenResponse
 
-@RequestMapping("/scul/user")
+@RequestMapping("/scul/users")
 @RestController
 class UserController (
         private val signUpService: SignUpService,
