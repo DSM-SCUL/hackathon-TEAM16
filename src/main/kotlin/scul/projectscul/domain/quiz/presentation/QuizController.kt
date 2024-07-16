@@ -9,7 +9,7 @@ import scul.projectscul.domain.quiz.service.GetQuizService
 import scul.projectscul.domain.quiz.service.SolveQuizService
 import java.util.*
 
-@RequestMapping("/scul/quiz")
+@RequestMapping("/scul/quizzes")
 @RestController
 class QuizController (
         private val getQuizService: GetQuizService,
