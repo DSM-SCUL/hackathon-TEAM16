@@ -1,13 +1,14 @@
 package scul.projectscul.domain.quiz.domain
 
 import com.example.kotlinpractice.global.entity.BaseUUIDEntity
-import jakarta.persistence.Column
-import jakarta.persistence.Entity
-import java.util.*
+import jakarta.persistence.*
 
 @Entity
 class Quiz(
-        id : UUID?,
+
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        val id : Long,
 
         @Column(columnDefinition = "VARCHAR(1000)", nullable = false)
         val quiz: String,
@@ -29,4 +30,4 @@ class Quiz(
 
         val isSolved: Boolean = false ,
 
-        ) : BaseUUIDEntity(id)
+        )
