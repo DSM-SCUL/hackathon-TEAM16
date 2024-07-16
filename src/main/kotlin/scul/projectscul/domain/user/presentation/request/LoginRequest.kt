@@ -6,10 +6,7 @@ import jakarta.validation.constraints.Size
 data class LoginRequest(
 
         @field:NotBlank
-        @field:Size(max = 30)
-        val accountId: String,
+        @field:Size(max = 50)
+        val email: String,
 
-        @field:NotBlank
-        @field:Size(max = 30)
-        val password: String
 )

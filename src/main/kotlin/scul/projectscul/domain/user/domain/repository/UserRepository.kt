@@ -6,8 +6,8 @@ import java.util.UUID
 
 interface UserRepository : CrudRepository<User, UUID>{
 
-    fun existsByAccountId(accountId: String) : Boolean
+    fun existsByEmail(email: String) : Boolean
 
-    fun findByAccountId(accountId: String) : User
+    fun findByEmail(email: String) : User
 
 }
