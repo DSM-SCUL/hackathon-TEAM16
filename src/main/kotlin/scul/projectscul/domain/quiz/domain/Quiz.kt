@@ -9,10 +9,10 @@ import java.util.*
 class Quiz(
         id : UUID?,
 
-        @Column(columnDefinition = "VARCHAR(10)", nullable = false)
+        @Column(columnDefinition = "VARCHAR(1000)", nullable = false)
         val quiz: String,
 
-        @Column(columnDefinition = "VARCHAR(50)", nullable = false)
+        @Column(columnDefinition = "VARCHAR(100)", nullable = false)
         val answer: String,
 
         @Column(columnDefinition = "VARCHAR(50)", nullable = false)
@@ -27,7 +27,6 @@ class Quiz(
         @Column(columnDefinition = "VARCHAR(50)", nullable = false)
         val choice4: String,
 
-        @Column(columnDefinition = "VARCHAR(50)", nullable = false)
         val isSolved: Boolean = false ,
 
         ) : BaseUUIDEntity(id)
