@@ -15,7 +15,7 @@ class User(
         @Column(columnDefinition = "VARCHAR(30)", nullable = false)
         val accountId: String,
 
-        @Column(columnDefinition = "CHAR(30)", nullable = false)
+        @Column(columnDefinition = "CHAR(300)", nullable = false)
         val password: String,
 
         ) : BaseUUIDEntity(id)
