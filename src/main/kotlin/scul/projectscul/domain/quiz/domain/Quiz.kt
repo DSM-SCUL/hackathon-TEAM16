@@ -10,24 +10,27 @@ class Quiz(
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         val id : Long,
 
-        @Column(columnDefinition = "VARCHAR(1000)", nullable = false)
+        @Column(columnDefinition = "VARCHAR(1000)")
         val quiz: String,
 
-        @Column(columnDefinition = "VARCHAR(100)", nullable = false)
+        @Column(columnDefinition = "VARCHAR(100)")
         val answer: String,
 
-        @Column(columnDefinition = "VARCHAR(50)", nullable = false)
+        @Column(columnDefinition = "VARCHAR(50)")
         val choice1: String,
 
-        @Column(columnDefinition = "VARCHAR(50)", nullable = false)
+        @Column(columnDefinition = "VARCHAR(50)")
         val choice2: String,
 
-        @Column(columnDefinition = "VARCHAR(50)", nullable = false)
+        @Column(columnDefinition = "VARCHAR(50)")
         val choice3: String,
 
-        @Column(columnDefinition = "VARCHAR(50)", nullable = false)
+        @Column(columnDefinition = "VARCHAR(50)")
         val choice4: String,
 
         val isSolved: Boolean = false ,
+
+        @Column(columnDefinition = "VARCHAR(500)")
+        val reason: String
 
         )

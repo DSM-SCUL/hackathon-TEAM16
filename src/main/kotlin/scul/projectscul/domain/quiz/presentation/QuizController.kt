@@ -13,10 +13,12 @@ import java.util.*
 class QuizController (
         private val getQuizService: GetQuizService
 ) {
+
     @GetMapping("/{quiz-id}")
     fun getQuiz(
             @PathVariable("quiz-id") @NotNull quizId: Long
     ) {
         getQuizService.execute(quizId)
     }
+
 }
