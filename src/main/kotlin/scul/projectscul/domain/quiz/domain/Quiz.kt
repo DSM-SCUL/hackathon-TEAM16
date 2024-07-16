@@ -28,9 +28,7 @@ class Quiz(
         @Column(columnDefinition = "VARCHAR(50)")
         val choice4: String,
 
-        val isSolved: Boolean = false ,
-
         @Column(columnDefinition = "VARCHAR(500)")
         val reason: String
 
-        )
+)
