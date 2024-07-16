@@ -7,7 +7,6 @@ import scul.projectscul.domain.quiz.presentation.response.GetQuizResponse
 import scul.projectscul.domain.quiz.service.GetLastQuizListService
 import scul.projectscul.domain.quiz.service.GetQuizService
 import scul.projectscul.domain.quiz.service.SolveQuizService
-import java.util.*
 
 @RequestMapping("/scul/user")
 @RestController
@@ -23,13 +22,13 @@ class QuizController (
     ) : GetQuizResponse {
         return getQuizService.execute(quizId)
     }
-/*
-    @GetMapping("/solved")
-    fun getLastQuizList() {
-        getLastQuizListService.execute()
-    }
 
- */
+    @GetMapping("/solved/{user-id}")
+    fun getLastQuizList(
+        @PathVariable("user-id") @NotNull userId: Long
+    ) {
+        getLastQuizListService.execute(userId)
+    }
 
     @GetMapping("solved/{quiz-id}")
     fun solveQuiz(
