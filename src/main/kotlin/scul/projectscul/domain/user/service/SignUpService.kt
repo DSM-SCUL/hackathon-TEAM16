@@ -6,6 +6,7 @@ import scul.projectscul.domain.user.domain.repository.UserRepository
 import scul.projectscul.domain.user.exception.UserAlreadyExistsException
 import scul.projectscul.domain.user.presentation.request.SignUpRequest
 import org.springframework.stereotype.Service
+import scul.projectscul.domain.user.domain.Enum.Tier
 import scul.projectscul.global.redis.dto.TokenResponse
 import scul.projectscul.global.security.jwt.JwtTokenProvider
 
@@ -27,7 +28,8 @@ class SignUpService (
                         name = request.name,
                         email = request.email,
                         birth = request.birth,
-                        profileImage = request.profileImage
+                        profileImage = request.profileImage,
+                        tier = Tier.UNRANKED
                 )
         )
         return jwtTokenProvider.generateTokens(accountId = request.email)
