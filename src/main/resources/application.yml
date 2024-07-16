@@ -2,9 +2,9 @@ spring:
   main:
     allow-bean-definition-overriding : true
   datasource:
-    url: ${DB_URL:jdbc:mysql://mysql.xquare.app:3306/prod_scul}
-    username: ${DB_USERNAME:xquare-scul}
-    password: ${DB_PASSWORD:OltoO0hNgUEm}
+    url: jdbc:mysql://mysql.xquare.app:3306/prod_scul
+    username: xquare-scul
+    password: OltoO0hNgUEm
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
