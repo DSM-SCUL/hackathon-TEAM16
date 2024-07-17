@@ -14,7 +14,8 @@ class UserFacade (
 ) {
 
     fun getCurrentUser(): User {
-        val id = (SecurityContextHolder.getContext().authentication.principal as UUID)
+        val principal = SecurityContextHolder.getContext().authentication.principal as String
+        val id = UUID.fromString(principal)
         return userRepository.findByIdOrNull(id) ?: throw UserNotFoundException
     }
 
