@@ -17,7 +17,7 @@ class FileController (
         private val fileUploadService: FileUploadService
 ) {
 
-    @PostMapping
+    @PostMapping("/upload")
     fun uploadFile(@RequestPart @NotNull file: MultipartFile?): UploadFileResponse {
         val result = fileUploadService.execute(
                 file!!.toFile()
