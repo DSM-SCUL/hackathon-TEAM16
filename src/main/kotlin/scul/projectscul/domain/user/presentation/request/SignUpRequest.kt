@@ -20,5 +20,5 @@ data class SignUpRequest(
         val birth: LocalDate,
 
         @Column(nullable = true)
-        val profileImage: String = "default"
+        val profileImage: String = "https://kangsunbucket.s3.ap-northeast-2.amazonaws.com/bacaf410-b7d5-45ab-b5ea-1023144223cf%7C%7Cpng-transparent-user-defult-avatar.png"
 )
