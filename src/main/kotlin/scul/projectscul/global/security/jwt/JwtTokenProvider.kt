@@ -1,6 +1,5 @@
 package scul.projectscul.global.security.jwt
 
-import scul.projectscul.global.redis.repository.RefreshTokenRepository
 import scul.projectscul.global.security.auth.AuthDetailsService
 import io.jsonwebtoken.*
 
@@ -8,7 +7,6 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication
 import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.stereotype.Component
-import scul.projectscul.global.redis.domain.RefreshToken
 import scul.projectscul.global.redis.dto.TokenResponse
 import java.util.*
 import javax.servlet.http.HttpServletRequest
@@ -18,7 +16,6 @@ import javax.servlet.http.HttpServletRequest
 class JwtTokenProvider(
         private val jwtProperties: JwtProperties,
         private val authDetailsService: AuthDetailsService,
-        private val refreshTokenRepository: RefreshTokenRepository
 ) {
     companion object {
         private const val ACCESS_KEY = "access_token"

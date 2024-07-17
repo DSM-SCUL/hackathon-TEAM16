@@ -24,7 +24,7 @@ class UserController (
         private val profileUpdateService: ProfileUpdateService
 ) {
     @PostMapping("/signup")
-    fun signUp(@RequestBody request: SignUpRequest) : TokenResponse{
+    fun signUp(@RequestBody request: SignUpRequest) : TokenResponse {
         return signUpService.execute(request)
     }
 
