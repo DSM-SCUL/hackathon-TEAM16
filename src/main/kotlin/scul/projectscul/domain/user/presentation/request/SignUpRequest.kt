@@ -19,5 +19,5 @@ data class SignUpRequest(
         val birth: LocalDate,
 
         @field:NotBlank
-        val profileImage: String
+        val profileImage: String = "default"
 )
