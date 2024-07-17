@@ -22,6 +22,7 @@ class RedisConfig(
         private val redisPort: Int,
 
 ) {
+    /*
     @Bean
     fun redisConnectionFactory(): RedisConnectionFactory {
         val redisConfig = RedisStandaloneConfiguration(redisHost, redisPort)
@@ -35,4 +36,6 @@ class RedisConfig(
         redisTemplate.setConnectionFactory(connectionFactory!!)
         return redisTemplate
     }
+
+     */
 }
