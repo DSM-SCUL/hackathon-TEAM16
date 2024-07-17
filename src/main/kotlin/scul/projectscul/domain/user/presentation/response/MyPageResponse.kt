@@ -6,14 +6,16 @@ import scul.projectscul.domain.user.domain.User
 data class MyPageResponse (
         val score: Int,
         val name: String,
-        val tier: Tier
+        val tier: Tier,
+        val profileImage: String
 ) {
     companion object {
         fun of(currentUser: User) : MyPageResponse {
             return MyPageResponse(
                     score = currentUser.score,
                     name = currentUser.name,
-                    tier = currentUser.tier
+                    tier = currentUser.tier,
+                    profileImage = currentUser.profileImage
             )
         }
     }
