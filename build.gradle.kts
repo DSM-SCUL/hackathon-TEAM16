@@ -50,6 +50,9 @@ dependencies {
 
 	implementation("org.springframework.boot:spring-boot-starter-web")
 
+	//S3
+	implementation ("com.amazonaws:aws-java-sdk-s3:1.12.281")
+
 	//fcm
 	implementation("com.google.firebase:firebase-admin:8.1.0")
 

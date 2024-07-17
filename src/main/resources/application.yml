@@ -38,3 +38,16 @@ logging:
         type:
           descriptor:
             sql: trace
+
+cloud:
+  aws:
+    credentials:
+      aws-access-key: ${AWS_ACCESS_KEY:d}
+      aws-secret-key: ${AWS_SECRET_KEY:d}
+    region:
+      static: ${AWS_REGION:ap-northeast-2}
+      auto: false
+    stack:
+      auto: false
+    s3:
+      bucket: ${BUCKET_NAME:kangsunbucket}
