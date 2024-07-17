@@ -26,7 +26,7 @@ spring:
 jwt:
   header: ${HEADER:Authorization}
   prefix : ${PREFIX:Bearer}
-  secret-key: ${JWT_SECRET_KEY:dfhasjkdfhayffhdtyhdhydshghjkdfaskverafter}
+  secret-key: ${JWT_SECRET_KEY:dfhasjkdfhayffhdtyhdfkjfvfddkvnvssdvnknkknlnkdkmnlvknllnkknlvfdhydshghjkdfaskverafter}
   access-exp: ${JWT_ACCESS_EXP:10000}
   refresh-exp: ${JWT_REFRESH_EXP:604800}
 

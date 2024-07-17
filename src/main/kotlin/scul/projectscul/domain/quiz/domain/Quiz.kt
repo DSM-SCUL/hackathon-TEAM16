@@ -1,7 +1,7 @@
 package scul.projectscul.domain.quiz.domain
 
 import com.example.kotlinpractice.global.entity.BaseUUIDEntity
-import jakarta.persistence.*
+import javax.persistence.*
 
 @Entity
 class Quiz(

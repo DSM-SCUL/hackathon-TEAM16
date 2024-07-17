@@ -1,5 +1,6 @@
-package com.study.kotlkotlin.global.redis
+package scul.projectscul.global.redis
 
+import org.springframework.beans.factory.annotation.Value
 import org.springframework.boot.autoconfigure.data.redis.RedisProperties
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
@@ -13,11 +14,25 @@ import org.springframework.data.redis.repository.configuration.EnableRedisReposi
 @EnableRedisRepositories(enableKeyspaceEvents = RedisKeyValueAdapter.EnableKeyspaceEvents.ON_STARTUP)
 @Configuration
 class RedisConfig(
-    private val redisProperties: RedisProperties
+
+        @Value("\${spring.data.redis.host}")
+        private val redisHost: String,
+
+        @Value("\${spring.data.redis.port}")
+        private val redisPort: Int,
+
+        @Value("\${spring.data.redis.password}")
+        private val redisPassword: String
+
 ) {
     @Bean
     fun redisConnectionFactory(): RedisConnectionFactory {
-        val redisConfig = RedisStandaloneConfiguration(redisProperties.host, redisProperties.port)
+        val redisConfig = RedisStandaloneConfiguration(redisHost, redisPort)
+
+        if (redisPassword.isNotBlank()) {
+            redisConfig.setPassword(redisPassword)
+        }
+
         return LettuceConnectionFactory(redisConfig)
     }
 

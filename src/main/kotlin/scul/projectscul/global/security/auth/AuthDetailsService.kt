@@ -14,7 +14,8 @@ class AuthDetailsService(
 ): UserDetailsService {
 
     override fun loadUserByUsername(email: String): UserDetails {
-        val user: User = userRepository.findByEmail(email)
+        print("asdf")
+        val user: User = userRepository.findByEmail(email) ?: throw UserNotFoundException
         return AuthDetails(user)
     }
 }

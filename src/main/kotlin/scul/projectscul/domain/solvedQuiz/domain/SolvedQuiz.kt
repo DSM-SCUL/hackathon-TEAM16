@@ -1,9 +1,9 @@
 package scul.projectscul.domain.solvedQuiz.domain
 
-import jakarta.persistence.*
 import scul.projectscul.domain.quiz.domain.Quiz
 import java.time.LocalDateTime
 import java.util.UUID
+import javax.persistence.*
 
 @Entity
 class SolvedQuiz(

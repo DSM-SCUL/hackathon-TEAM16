@@ -1,11 +1,9 @@
 package scul.projectscul.domain.file.presentation
 
-import jakarta.validation.constraints.NotNull
+import com.sun.istack.NotNull
 import org.springframework.web.bind.annotation.*
 import org.springframework.web.multipart.MultipartFile
 import scul.projectscul.domain.file.presentation.response.UploadFileResponse
-import scul.projectscul.domain.user.presentation.request.SignUpRequest
-import scul.projectscul.global.redis.dto.TokenResponse
 import scul.projectscul.infra.FileUploadService
 import java.io.File
 import java.io.FileOutputStream

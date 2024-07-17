@@ -2,10 +2,10 @@ package com.example.kotlinpractice.global.error.dto
 
 import com.example.kotlinpractice.global.error.GlobalErrorCode
 import com.example.kotlinpractice.global.error.exception.ErrorProperty
-import jakarta.validation.ConstraintViolationException
 import org.springframework.dao.DataIntegrityViolationException
 import org.springframework.validation.BindingResult
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException
+import javax.validation.ConstraintViolationException
 
 data class ErrorResponse(
     val status: Int,

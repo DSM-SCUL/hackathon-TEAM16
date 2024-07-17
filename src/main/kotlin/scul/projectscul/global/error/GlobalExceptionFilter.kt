@@ -4,10 +4,11 @@ import com.fasterxml.jackson.databind.ObjectMapper
 import com.example.kotlinpractice.global.error.dto.ErrorResponse
 import com.example.kotlinpractice.global.error.exception.BusinessException
 import com.example.kotlinpractice.global.error.exception.ErrorProperty
-import jakarta.servlet.FilterChain
-import jakarta.servlet.http.HttpServletRequest
-import jakarta.servlet.http.HttpServletResponse
+import javax.persistence.*
 import org.springframework.web.filter.OncePerRequestFilter
+import javax.servlet.FilterChain
+import javax.servlet.http.HttpServletRequest
+import javax.servlet.http.HttpServletResponse
 
 class GlobalExceptionFilter(
     private val objectMapper: ObjectMapper

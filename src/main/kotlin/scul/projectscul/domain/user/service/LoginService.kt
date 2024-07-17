@@ -1,8 +1,8 @@
 package scul.projectscul.domain.user.service
 
-import jakarta.transaction.Transactional
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Service
+import org.springframework.transaction.annotation.Transactional
 import scul.projectscul.domain.user.domain.repository.UserRepository
 import scul.projectscul.domain.user.exception.PasswordMisMatchException
 import scul.projectscul.domain.user.exception.UserNotFoundException
@@ -22,6 +22,6 @@ class LoginService (
             throw UserNotFoundException
 
         }
-                return jwtProvider.generateTokens(accountId = request.email)
+                return jwtProvider.generateToken(userId  = request.email)
     }
 }
