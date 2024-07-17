@@ -16,6 +16,7 @@ class UserFacade(
 
     fun getCurrentUser(): User {
         val id = SecurityContextHolder.getContext().authentication.name.toString()
+        println("dddddddddddddddd")
         return userRepository.findByEmail(id) ?: throw UserNotFoundException
     }
 }
