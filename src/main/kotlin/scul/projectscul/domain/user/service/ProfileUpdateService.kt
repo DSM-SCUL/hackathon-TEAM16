@@ -14,6 +14,6 @@ class ProfileUpdateService (
     fun execute(request: ProfileUpdateRequest) {
         val currentUser = userFacade.getCurrentUser()
 
-        currentUser.profileImage = request.profileImage
+        currentUser.updateImage(request.profileImage)
     }
 }

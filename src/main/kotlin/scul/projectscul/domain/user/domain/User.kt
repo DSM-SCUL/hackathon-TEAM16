@@ -1,10 +1,10 @@
 package scul.projectscul.domain.user.domain
 
 import com.example.kotlinpractice.global.entity.BaseUUIDEntity
-import javax.persistence.*
 import scul.projectscul.domain.user.domain.Enum.Tier
 import java.time.LocalDate
 import java.util.*
+import javax.persistence.*
 
 @Entity
 class User(
@@ -24,12 +24,17 @@ class User(
 
         val todaySolvedCounts: Int = 0,
 
-        val SolvedCounts: Int = 0,
+        val solvedCounts: Int = 0,
 
         val score: Int = 0,
 
         @Enumerated(EnumType.STRING)
         val tier: Tier
 
-) : BaseUUIDEntity(id)
+) : BaseUUIDEntity(id) {
+
+        fun updateImage(image: String) {
+                this.profileImage = image
+        }
+}
 

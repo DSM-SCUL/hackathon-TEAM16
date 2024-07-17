@@ -29,7 +29,7 @@ class SolveQuizService (
             val randomValue = (Math.random()) * (16 - 9) + 8
             currentUser.score + randomValue.toInt()
 
-            currentUser.SolvedCounts+1
+            currentUser.solvedCounts+1
 
             val solvedQuiz = SolvedQuiz(
                 id = 0,
