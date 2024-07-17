@@ -11,7 +11,7 @@ import org.springframework.data.redis.core.RedisKeyValueAdapter
 import org.springframework.data.redis.core.RedisTemplate
 import org.springframework.data.redis.repository.configuration.EnableRedisRepositories
 
-@EnableRedisRepositories(enableKeyspaceEvents = RedisKeyValueAdapter.EnableKeyspaceEvents.ON_STARTUP, keyspaceNotificationsConfigParameter = "")
+@EnableRedisRepositories(enableKeyspaceEvents = RedisKeyValueAdapter.EnableKeyspaceEvents.ON_STARTUP)
 @Configuration
 class RedisConfig(
 
@@ -28,6 +28,10 @@ class RedisConfig(
     @Bean
     fun redisConnectionFactory(): RedisConnectionFactory {
         val redisConfig = RedisStandaloneConfiguration(redisHost, redisPort)
+
+        if (redisPassword.isNotBlank()) {
+            redisConfig.setPassword(redisPassword)
+        }
 
         return LettuceConnectionFactory(redisConfig)
     }

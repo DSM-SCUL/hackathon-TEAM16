@@ -31,4 +31,4 @@ class User(
         @Enumerated(EnumType.STRING)
         val tier: Tier
 
-        ) : BaseUUIDEntity(id)
+) : BaseUUIDEntity(id)
