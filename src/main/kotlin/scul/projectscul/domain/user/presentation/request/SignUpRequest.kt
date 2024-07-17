@@ -1,5 +1,6 @@
 package scul.projectscul.domain.user.presentation.request
 
+import jakarta.persistence.Column
 import jakarta.validation.constraints.NotBlank
 import jakarta.validation.constraints.Size
 import java.time.LocalDate
@@ -18,6 +19,6 @@ data class SignUpRequest(
         @field:NotBlank
         val birth: LocalDate,
 
-        @field:NotBlank
+        @Column(nullable = true)
         val profileImage: String = "default"
 )
