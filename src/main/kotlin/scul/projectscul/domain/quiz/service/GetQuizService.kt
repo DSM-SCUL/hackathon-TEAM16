@@ -20,7 +20,6 @@ class GetQuizService (
         val currentUser: User = userFacade.getCurrentUser()
         val quiz: Quiz = quizRepository.findQuizById(quizId)
 
-        currentUser.todaySolvedCounts + 1
         return GetQuizResponse.of(quiz, currentUser.todaySolvedCounts)
     }
 }

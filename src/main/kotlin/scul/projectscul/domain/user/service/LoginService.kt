@@ -20,8 +20,8 @@ class LoginService (
 
         if(!userRepository.existsByEmail((request.email))) {
             throw UserNotFoundException
-        }
 
+        }
                 return jwtProvider.generateTokens(accountId = request.email)
     }
 }
