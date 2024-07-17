@@ -26,7 +26,7 @@ class QuizController (
     fun solveQuiz(
             @RequestBody request: SolveQuizRequest,
             @PathVariable("quiz-id") @NotNull quizId: Long
-    ) {
+    ) : Boolean {
         solveQuizService.execute(request, quizId)
     }
 }

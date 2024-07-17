@@ -18,10 +18,12 @@ class SolveQuizService (
         private val solvedQuizRepository: SolvedQuizRepository
 ) {
 
-    fun execute(request: SolveQuizRequest, quizId: Long) {
+    fun execute(request: SolveQuizRequest, quizId: Long) : Boolean {
 
         val currentUser: User = userFacade.getCurrentUser()
         val quiz: Quiz = quizRepository.findQuizById(quizId)
+
+        var correct: Boolean = false
 
         if (request.answer == quiz.answer) {
             val randomValue = (Math.random()) * (16 - 9) + 8
@@ -34,7 +36,12 @@ class SolveQuizService (
                 userId = currentUser.id,
                 quiz = quiz
             )
+
             solvedQuizRepository.save(solvedQuiz)
+            correct = true
+
         }
+        return correct
+
     }
 }
