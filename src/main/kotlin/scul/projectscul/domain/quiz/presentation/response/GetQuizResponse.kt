@@ -10,7 +10,8 @@ data class GetQuizResponse (
         val choice3: String,
         val choice4: String,
         val reason: String,
-        val todaySolvedQuiz: Int
+        val todaySolvedQuiz: Int,
+        val answer: String
         ) {
     companion object {
         fun of(quiz: Quiz, todaySolvedQuiz: Int) : GetQuizResponse {
@@ -22,7 +23,8 @@ data class GetQuizResponse (
                     choice3 = quiz.choice3,
                     choice4 = quiz.choice4,
                     reason = quiz.reason,
-                    todaySolvedQuiz = todaySolvedQuiz
+                    todaySolvedQuiz = todaySolvedQuiz,
+                    answer = quiz.answer
             )
         }
     }
