@@ -29,10 +29,6 @@ class RedisConfig(
     fun redisConnectionFactory(): RedisConnectionFactory {
         val redisConfig = RedisStandaloneConfiguration(redisHost, redisPort)
 
-        if (redisPassword.isNotBlank()) {
-            redisConfig.setPassword(redisPassword)
-        }
-
         return LettuceConnectionFactory(redisConfig)
     }
 
