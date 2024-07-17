@@ -31,7 +31,7 @@ class QuizController (
 
  */
 
-    @GetMapping("solved/{quiz-id}")
+    @PostMapping("solve/{quiz-id}")
     fun solveQuiz(
             @RequestBody request: SolveQuizRequest,
             @PathVariable("quiz-id") @NotNull quizId: Long
