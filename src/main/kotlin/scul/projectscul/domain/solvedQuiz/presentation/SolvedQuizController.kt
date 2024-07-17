@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController
 import scul.projectscul.domain.solvedQuiz.service.GetLastQuizListService
 import java.util.*
 
-@RequestMapping("/scul/user")
+@RequestMapping("/scul/quizzes")
 @RestController
 class SolvedQuizController (
     private val getLastQuizListService: GetLastQuizListService
