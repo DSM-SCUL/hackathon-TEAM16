@@ -9,13 +9,13 @@ class News (
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         val id : Long,
 
-        @Column(columnDefinition = "VARCHAR(10)", nullable = false)
+        @Column(columnDefinition = "VARCHAR(100)", nullable = false)
         val title: String,
 
         @Column(columnDefinition = "VARCHAR(50)", nullable = false)
-        val email: String,
+        val provider: String,
 
-        @Column(columnDefinition = "VARCHAR(20)", nullable = false)
+        @Column(columnDefinition = "VARCHAR(1000)", nullable = false)
         val providerLinkPage: String,
 
 )
