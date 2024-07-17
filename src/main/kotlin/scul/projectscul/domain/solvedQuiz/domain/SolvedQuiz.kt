@@ -1,16 +1,18 @@
-package scul.projectscul.domain.quiz.domain
+package scul.projectscul.domain.solvedQuiz.domain
 
 import jakarta.persistence.*
+import scul.projectscul.domain.quiz.domain.Quiz
 import java.time.LocalDateTime
+import java.util.UUID
 
 @Entity
-class UserQuizSolved(
+class SolvedQuiz(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long = 0,
+    val id: Long,
 
     @Column(nullable = false)
-    val userId: Long,
+    val userId: UUID?,
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "quiz_id")

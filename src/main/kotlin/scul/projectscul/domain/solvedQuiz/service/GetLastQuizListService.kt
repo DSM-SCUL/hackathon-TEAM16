@@ -1,14 +1,14 @@
-package scul.projectscul.domain.quiz.service
+package scul.projectscul.domain.solvedQuiz.service
 
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
-import scul.projectscul.domain.quiz.domain.repository.UserQuizSolvedRepository
-import scul.projectscul.domain.quiz.presentation.response.GetLastSolvedQuizResponse
+import scul.projectscul.domain.solvedQuiz.domain.repository.SolvedQuizRepository
+import scul.projectscul.domain.solvedQuiz.presentation.response.GetLastSolvedQuizResponse
 
 @Service
 @Transactional(readOnly = true)
 class GetLastQuizListService(
-        private val userQuizSolveRepository: UserQuizSolvedRepository
+        private val userQuizSolveRepository: SolvedQuizRepository
 ) {
         fun execute(userId: Long): GetLastSolvedQuizResponse {
                 val solvedQuizzes = userQuizSolveRepository.findByUserId(userId)

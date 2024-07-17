@@ -1,4 +1,4 @@
-package scul.projectscul.domain.quiz.presentation.response
+package scul.projectscul.domain.solvedQuiz.presentation.response
 
 import java.time.LocalDateTime
 

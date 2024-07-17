@@ -5,6 +5,8 @@ import org.springframework.transaction.annotation.Transactional
 import scul.projectscul.domain.quiz.domain.Quiz
 import scul.projectscul.domain.quiz.domain.repository.QuizRepository
 import scul.projectscul.domain.quiz.presentation.request.SolveQuizRequest
+import scul.projectscul.domain.solvedQuiz.domain.SolvedQuiz
+import scul.projectscul.domain.solvedQuiz.domain.repository.SolvedQuizRepository
 import scul.projectscul.domain.user.domain.User
 import scul.projectscul.domain.user.facade.UserFacade
 
@@ -12,7 +14,8 @@ import scul.projectscul.domain.user.facade.UserFacade
 @Transactional
 class SolveQuizService (
         private val userFacade: UserFacade,
-        private val quizRepository: QuizRepository
+        private val quizRepository: QuizRepository,
+        private val solvedQuizRepository: SolvedQuizRepository
 ) {
 
     fun execute(request: SolveQuizRequest, quizId: Long) {
@@ -25,6 +28,13 @@ class SolveQuizService (
             currentUser.score + randomValue
 
             currentUser.SolvedCounts+1
+
+            val solvedQuiz = SolvedQuiz(
+                id = 0,
+                userId = currentUser.id,
+                quiz = quiz
+            )
+            solvedQuizRepository.save(solvedQuiz)
         }
     }
 }
