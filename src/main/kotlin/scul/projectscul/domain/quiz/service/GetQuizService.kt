@@ -20,7 +20,7 @@ class GetQuizService (
         val currentUser: User = userFacade.getCurrentUser()
         val quiz: Quiz = quizRepository.findQuizById(quizId)
 
-        val index : Int
+        var index : Int =0
 
         when (quiz.answer) {
             quiz.choice1 -> {
