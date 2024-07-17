@@ -17,7 +17,7 @@ class UpdateNewsService (
                     id = 0,
                     title = newsRequest.title,
                     provider = newsRequest.provider,
-                    providerLinkPage = newsRequest.providerLinkPage
+                    providerLinkPage = newsRequest.provider_link_page
             )
             newsRepository.save(news)
         }

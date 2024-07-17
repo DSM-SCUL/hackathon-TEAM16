@@ -7,6 +7,6 @@ data class NewsListRequest(
     data class NewsRequest (
             val title: String,
             val provider: String,
-            val providerLinkPage : String
+            val provider_link_page : String
     )
 }
