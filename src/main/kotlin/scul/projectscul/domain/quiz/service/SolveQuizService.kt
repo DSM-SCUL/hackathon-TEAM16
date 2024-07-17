@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 import scul.projectscul.domain.quiz.domain.Quiz
 import scul.projectscul.domain.quiz.domain.repository.QuizRepository
+import scul.projectscul.domain.quiz.exception.TodayQuizOverException
 import scul.projectscul.domain.quiz.presentation.request.SolveQuizRequest
 import scul.projectscul.domain.solvedQuiz.domain.SolvedQuiz
 import scul.projectscul.domain.solvedQuiz.domain.repository.SolvedQuizRepository
@@ -26,10 +27,17 @@ class SolveQuizService (
         var correct: Boolean = false
 
         if (request.answer == quiz.answer) {
-            val randomValue = (Math.random()) * (16 - 9) + 8
+            val randomValue = (Math.random() * (500 - 300)) + 300
             currentUser.score + randomValue.toInt()
 
-            currentUser.solvedCounts+1
+            currentUser.solvedCounts + 1
+
+            if (currentUser.todaySolvedCounts >= 5 ) {
+                throw TodayQuizOverException
+            } else {
+                currentUser.todaySolvedCounts + 1
+            }
+
 
             val solvedQuiz = SolvedQuiz(
                 id = 0,

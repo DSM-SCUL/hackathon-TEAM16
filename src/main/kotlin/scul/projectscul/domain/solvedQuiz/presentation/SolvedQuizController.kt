@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
+import scul.projectscul.domain.solvedQuiz.presentation.response.GetLastSolvedQuizResponse
 import scul.projectscul.domain.solvedQuiz.service.GetLastQuizListService
 import java.util.*
 
@@ -16,7 +17,7 @@ class SolvedQuizController (
     @GetMapping("/solved/{user-id}")
     fun getLastQuizList(
         @PathVariable("user-id") @NotNull userId: UUID
-    ) {
-        getLastQuizListService.execute(userId)
+    ) : GetLastSolvedQuizResponse {
+        return getLastQuizListService.execute(userId)
     }
 }
