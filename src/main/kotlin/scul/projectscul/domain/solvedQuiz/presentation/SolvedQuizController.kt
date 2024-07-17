@@ -1,22 +1,22 @@
 package scul.projectscul.domain.solvedQuiz.presentation
 
 import org.jetbrains.annotations.NotNull
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.http.ResponseEntity
+import org.springframework.web.bind.annotation.*
 import scul.projectscul.domain.solvedQuiz.service.GetLastQuizListService
+import scul.projectscul.domain.solvedQuiz.presentation.response.GetLastSolvedQuizResponse
 import java.util.*
 
-@RequestMapping("/scul/user")
+@RequestMapping("/scul/solved")
 @RestController
 class SolvedQuizController (
     private val getLastQuizListService: GetLastQuizListService
 ){
-    @GetMapping("/solved/{user-id}")
+    @GetMapping("/{user-id}")
     fun getLastQuizList(
         @PathVariable("user-id") @NotNull userId: UUID
-    ) {
-        getLastQuizListService.execute(userId)
+    ): ResponseEntity<GetLastSolvedQuizResponse> {
+        val response = getLastQuizListService.execute(userId)
+        return ResponseEntity.ok(response)
     }
 }

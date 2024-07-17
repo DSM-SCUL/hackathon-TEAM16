@@ -1,9 +1,10 @@
 package scul.projectscul.domain.solvedQuiz.presentation.response
 
 import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 data class GetLastSolvedQuizResponse(
-        val quizzes: List<QuizDto>
+        val quizzesByDate: Map<String, List<QuizDto>>
 ) {
         data class QuizDto(
                 val id: Long,
@@ -16,4 +17,13 @@ data class GetLastSolvedQuizResponse(
                 val reason: String,
                 val solvedAt: LocalDateTime
         )
+
+        companion object {
+                fun fromQuizList(quizzes: List<QuizDto>): GetLastSolvedQuizResponse {
+                        val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
+                        val quizzesByDate = quizzes.sortedByDescending { it.solvedAt }
+                                .groupBy { it.solvedAt.format(formatter) }
+                        return GetLastSolvedQuizResponse(quizzesByDate)
+                }
+        }
 }

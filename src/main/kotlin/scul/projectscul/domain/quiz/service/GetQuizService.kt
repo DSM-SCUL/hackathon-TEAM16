@@ -21,6 +21,7 @@ class GetQuizService (
         val quiz: Quiz = quizRepository.findQuizById(quizId)
 
         currentUser.todaySolvedCounts + 1
+
         return GetQuizResponse.of(quiz, currentUser.todaySolvedCounts)
     }
 }
