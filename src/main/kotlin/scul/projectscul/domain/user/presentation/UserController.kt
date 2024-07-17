@@ -7,8 +7,10 @@ import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
+import scul.projectscul.domain.user.presentation.request.EmailCheckRequest
 import scul.projectscul.domain.user.presentation.request.LoginRequest
 import scul.projectscul.domain.user.presentation.response.MyPageResponse
+import scul.projectscul.domain.user.service.EmailCheckService
 import scul.projectscul.domain.user.service.LoginService
 import scul.projectscul.domain.user.service.MyPageService
 import scul.projectscul.global.redis.dto.TokenResponse
@@ -18,7 +20,8 @@ import scul.projectscul.global.redis.dto.TokenResponse
 class UserController (
         private val signUpService: SignUpService,
         private val loginService: LoginService,
-        private val myPageService: MyPageService
+        private val myPageService: MyPageService,
+        private val emailCheckService: EmailCheckService
 ) {
     @PostMapping("/signup")
     fun signUp(@RequestBody request: SignUpRequest) : TokenResponse{
@@ -33,5 +36,10 @@ class UserController (
     @GetMapping("/mypage")
     fun mypage() : MyPageResponse {
         return myPageService.execute()
+    }
+
+    @GetMapping("/email")
+    fun emailCheck(request: EmailCheckRequest) : Boolean {
+        return emailCheckService.execute(request)
     }
 }
