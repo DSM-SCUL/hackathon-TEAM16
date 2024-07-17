@@ -15,11 +15,7 @@ class UserFacade(
 ) {
 
     fun getCurrentUser(): User {
-        val principal = SecurityContextHolder.getContext().authentication.principal
-
-        // principal이 String 타입이라고 가정하고 UUID로 변환
-        val id = UUID.fromString(principal as String)
-
-        return userRepository.findByIdOrNull(id) ?: throw UserNotFoundException
+        val id = SecurityContextHolder.getContext().authentication.name.toString()
+        return userRepository.findByEmail(id) ?: throw UserNotFoundException
     }
 }
