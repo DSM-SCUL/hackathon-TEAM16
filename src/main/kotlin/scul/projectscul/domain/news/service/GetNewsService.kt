@@ -13,7 +13,6 @@ class GetNewsService (
 ) {
 
     fun execute(): NewsListResponse {
-
         return NewsListResponse(
                 newsRepository.findAll()
                         .map { NewsListResponse.NewsResponse(it) }

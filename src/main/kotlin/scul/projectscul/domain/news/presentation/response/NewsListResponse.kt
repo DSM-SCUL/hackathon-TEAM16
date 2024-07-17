@@ -4,9 +4,8 @@ import scul.projectscul.domain.news.domain.News
 
 data class NewsListResponse (
 
-        val itemList: List<NewsResponse>
+        val newsList: List<NewsResponse>
 ) {
-
     data class NewsResponse (
             val id : Long,
             val title : String,

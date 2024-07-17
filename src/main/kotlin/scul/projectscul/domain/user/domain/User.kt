@@ -20,7 +20,7 @@ class User(
         val birth: LocalDate,
 
         @Column(columnDefinition = "VARCHAR(5000)", nullable = false)
-        val profileImage: String,
+        var profileImage: String,
 
         val todaySolvedCounts: Int = 0,
 
@@ -32,3 +32,4 @@ class User(
         val tier: Tier
 
 ) : BaseUUIDEntity(id)
+
