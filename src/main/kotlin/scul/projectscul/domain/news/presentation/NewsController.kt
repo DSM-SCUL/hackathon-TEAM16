@@ -14,7 +14,7 @@ class NewsController (
 
 ) {
 
-    @GetMapping
+    @GetMapping("/list")
     fun newsList() : NewsListResponse {
         return getNewsService.execute()
     }
