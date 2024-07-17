@@ -21,6 +21,7 @@ spring:
     redis:
       host: ${REDIS_HOST:redis.xquare.app}
       port: ${REDIS_PORT:6379}
+      password: asdf
 
 jwt:
   header: ${HEADER:Authorization}
