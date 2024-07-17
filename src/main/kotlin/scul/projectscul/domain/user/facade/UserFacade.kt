@@ -1,6 +1,5 @@
 package scul.projectscul.domain.user.facade
 
-import com.example.kotlinpractice.global.security.auth.AuthDetails
 import scul.projectscul.domain.user.domain.User
 import scul.projectscul.domain.user.domain.repository.UserRepository
 import scul.projectscul.domain.user.exception.UserNotFoundException
@@ -15,7 +14,8 @@ class UserFacade(
 ) {
 
     fun getCurrentUser(): User {
-        val id = (SecurityContextHolder.getContext().authentication.principal as UUID)
-        return userRepository.findByIdOrNull(id) ?: throw UserNotFoundException
+        val email = SecurityContextHolder.getContext().authentication.name
+        print(email)
+        return userRepository.findByEmail(email) ?: throw UserNotFoundException
     }
 }
