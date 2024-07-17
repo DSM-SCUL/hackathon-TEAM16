@@ -10,13 +10,13 @@ data class NewsListResponse (
     data class NewsResponse (
             val id : Long,
             val title : String,
-            val email : String,
+            val provider : String,
             val providerLinkPage : String
     ) {
         constructor(news: News): this(
                 id = news.id,
                 title = news.title,
-                email = news.email,
+                provider = news.provider,
                 providerLinkPage = news.providerLinkPage
         )
     }
