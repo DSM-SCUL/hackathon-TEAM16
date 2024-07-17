@@ -4,13 +4,14 @@ import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 import scul.projectscul.domain.solvedQuiz.domain.repository.SolvedQuizRepository
 import scul.projectscul.domain.solvedQuiz.presentation.response.GetLastSolvedQuizResponse
+import java.util.UUID
 
 @Service
 @Transactional(readOnly = true)
 class GetLastQuizListService(
         private val userQuizSolveRepository: SolvedQuizRepository
 ) {
-        fun execute(userId: Long): GetLastSolvedQuizResponse {
+        fun execute(userId: UUID): GetLastSolvedQuizResponse {
                 val solvedQuizzes = userQuizSolveRepository.findByUserId(userId)
 
                 return GetLastSolvedQuizResponse(
