@@ -12,13 +12,13 @@ import scul.projectscul.global.security.jwt.JwtTokenProvider
 
 @Service
 @Transactional
-class SignUpService (
+class SignUpService(
         private val userRepository: UserRepository,
         private val jwtTokenProvider: JwtTokenProvider,
-){
+) {
 
-    fun execute(request: SignUpRequest) : TokenResponse{
-        if (userRepository.existsByEmail(request.email)){
+    fun execute(request: SignUpRequest): TokenResponse {
+        if (userRepository.existsByEmail(request.email)) {
             throw UserAlreadyExistsException
         }
 
