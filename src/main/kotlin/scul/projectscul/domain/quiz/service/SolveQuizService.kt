@@ -25,7 +25,7 @@ class SolveQuizService (
 
         if (request.answer == quiz.answer) {
             val randomValue = (Math.random()) * (16 - 9) + 8
-            currentUser.score + randomValue
+            currentUser.score + randomValue.toInt()
 
             currentUser.SolvedCounts+1
 
