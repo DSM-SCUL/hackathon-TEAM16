@@ -11,10 +11,10 @@ data class GetQuizResponse (
         val choice4: String,
         val reason: String,
         val todaySolvedQuiz: Int,
-        val answer: String
+        val answer: Int
         ) {
     companion object {
-        fun of(quiz: Quiz, todaySolvedQuiz: Int) : GetQuizResponse {
+        fun of(quiz: Quiz, todaySolvedQuiz: Int, index : Int) : GetQuizResponse {
             return GetQuizResponse(
                     quizId = quiz.id,
                     quiz = quiz.quiz,
@@ -24,7 +24,7 @@ data class GetQuizResponse (
                     choice4 = quiz.choice4,
                     reason = quiz.reason,
                     todaySolvedQuiz = todaySolvedQuiz,
-                    answer = quiz.answer
+                    answer = index
             )
         }
     }
