@@ -8,6 +8,7 @@ import scul.projectscul.domain.quiz.exception.TodayQuizOverException
 import scul.projectscul.domain.quiz.presentation.request.SolveQuizRequest
 import scul.projectscul.domain.solvedQuiz.domain.SolvedQuiz
 import scul.projectscul.domain.solvedQuiz.domain.repository.SolvedQuizRepository
+import scul.projectscul.domain.user.domain.Enum.Tier
 import scul.projectscul.domain.user.domain.User
 import scul.projectscul.domain.user.facade.UserFacade
 
@@ -30,13 +31,37 @@ class SolveQuizService (
             val randomValue = (Math.random() * (500 - 300)) + 300
             currentUser.score + randomValue.toInt()
 
-            currentUser.solvedCounts + 1
-
-            if (currentUser.todaySolvedCounts >= 5 ) {
-                throw TodayQuizOverException
-            } else {
-                currentUser.todaySolvedCounts + 1
+            when (currentUser.score) {
+                0 -> {
+                    currentUser.tier = Tier.UNRANKED
+                }
+                in 1..500 -> {
+                    currentUser.tier = Tier.BRONZE
+                }
+                in 501..1100 -> {
+                    currentUser.tier = Tier.SILVER
+                }
+                in 1101..1800 -> {
+                    currentUser.tier = Tier.GOLD
+                }
+                in 1801..2600 -> {
+                    currentUser.tier = Tier.PLATINUM
+                }
+                in 2601..3700 -> {
+                    currentUser.tier = Tier.DIAMOND
+                }
+                in 3701..4700 -> {
+                    currentUser.tier = Tier.RUBY
+                }
+                in 4701..6000 -> {
+                    currentUser.tier = Tier.SUN
+                }
+                else -> {
+                    currentUser.tier = Tier.SUN
+                }
             }
+
+            currentUser.solvedCounts + 1
 
 
             val solvedQuiz = SolvedQuiz(
