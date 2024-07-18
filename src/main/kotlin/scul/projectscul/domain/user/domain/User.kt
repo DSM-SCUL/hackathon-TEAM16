@@ -29,7 +29,7 @@ class User(
         val score: Int = 0,
 
         @Enumerated(EnumType.STRING)
-        val tier: Tier
+        var tier: Tier
 
 ) : BaseUUIDEntity(id) {
 
