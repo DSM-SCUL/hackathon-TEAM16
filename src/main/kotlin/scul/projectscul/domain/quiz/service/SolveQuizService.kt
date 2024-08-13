@@ -63,7 +63,6 @@ class SolveQuizService (
 
             currentUser.solvedCounts + 1
 
-
             val solvedQuiz = SolvedQuiz(
                 id = 0,
                 userId = currentUser.id,
