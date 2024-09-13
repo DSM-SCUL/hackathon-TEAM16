@@ -1,6 +1,0 @@
-config:
-  name: scul
-  prefix: "/scul"
-  service_type: be
-  port: 8080
-
